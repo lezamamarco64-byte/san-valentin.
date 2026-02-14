@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #b83280, #f3c6d3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Tarjeta */
+.card {
+  position: relative;
+  width: 95%;
+  max-width: 900px;
+  background: #f7efe6;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Texto */
+.text {
+  flex: 1;
+  color: #5a4a42;
+  font-size: 1rem;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.love {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.time {
+  margin-top: 25px;
+}
+
+#counter {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Árbol */
+.tree {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.trunk {
+  width: 28px;
+  height: 150px;
+  background: #7a4a2e;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.heart-group {
+  position: absolute;
+  bottom: 170px;
+  width: 220px;
+  height: 200px;
+}
+
+/* Corazones */
+.heart {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: red;
+  transform: rotate(45deg);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before { top: -7px; }
+.heart::after { left: -7px; }
+
+/* Suelo */
+.ground {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  height: 3px;
+  background: #333;
+}
+
+/* Corazones cayendo */
+.falling-heart {
+  position: fixed;
+  top: -20px;
+  font-size: 18px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tree {
+    height: 300px;
+  }
+}
